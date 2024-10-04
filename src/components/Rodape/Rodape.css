@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.footer {
+  background-color: #6278f7;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer .redes-sociais {
+  display: flex;
+  gap: 32px;
+}
+
+.footer img {
+    max-width: 15%;
+}
+
+.footer {
+  color: white;
+  font-size: 16px;
+  font-family: "Montserrat";
+  font-weight: 200;
+}

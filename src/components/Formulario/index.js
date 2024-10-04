@@ -11,9 +11,17 @@ const Formulario = (props) => {
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
 
+  const limparFormulario = () => {
+    setNome('');
+    setCargo('');
+    setImagem('');
+    setTime('');
+  }
+
   const aoSalvar = (evento) => {
     evento.preventDefault();
     props.aoColaboradorCadastrado({nome, cargo, imagem, time});
+    limparFormulario();
   };
 
   return (
