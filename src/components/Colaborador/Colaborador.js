@@ -1,8 +1,10 @@
+import { FaTrash } from "react-icons/fa";
 import './Colaborador.css'
 
-const Colaborador = ( {nome, cargo, imagem, corDeFundo} ) => {
+const Colaborador = ( {nome, cargo, imagem, corDeFundo, aoDeletar} ) => {
     return (
         <div className='colaborador'>
+            <FaTrash size={25} className='deletar' onClick={aoDeletar}/>
             <div className='cabecalho' style={{backgroundColor: corDeFundo}}> 
                 <img src={imagem} alt={nome}></img>
             </div>
