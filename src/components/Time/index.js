@@ -2,15 +2,20 @@ import Colaborador from "../Colaborador/Colaborador";
 import "./Time.css";
 import hexToRgba from "hex-to-rgba";
 
-const Time = ({nome, cor, id, colaboradores, aoDeletar, mudarCor}) => {
+const Time = ({ nome, cor, id, colaboradores, aoDeletar, mudarCor, aoFavoritar }) => {
   const estilo = {
-    backgroundColor: hexToRgba(cor, '0.4'),
-    backgroundImage: 'url(/imagens/fundo.png)'
+    backgroundColor: hexToRgba(cor, "0.4"),
+    backgroundImage: "url(/imagens/fundo.png)",
   };
 
   return colaboradores.length > 0 ? (
     <section className="time" style={estilo}>
-      <input onChange={evento => mudarCor(evento.target.value, id)} value={cor} type="color" className="input-cor"/>
+      <input
+        onChange={(evento) => mudarCor(evento.target.value, id)}
+        value={cor}
+        type="color"
+        className="input-cor"
+      />
       <h3 style={{ borderColor: cor }}>{nome}</h3>
       <div className="colaboradores">
         {colaboradores.map((colaborador) => {
@@ -21,8 +26,10 @@ const Time = ({nome, cor, id, colaboradores, aoDeletar, mudarCor}) => {
               cargo={colaborador.cargo}
               imagem={colaborador.imagem}
               id={colaborador.id}
+              favorito={colaborador.favorito}
               corDeFundo={cor}
               aoDeletar={aoDeletar}
+              aoFavoritar={aoFavoritar}
             />
           );
         })}
